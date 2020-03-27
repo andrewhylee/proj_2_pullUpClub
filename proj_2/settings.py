@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'pullupclub.apps.PullupclubConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
