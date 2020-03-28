@@ -1,6 +1,7 @@
 # Don't track content of these folders
 manage.py
 venv_proj_2
+db.sqlite3
 
 # Compiled source #
 ###################
