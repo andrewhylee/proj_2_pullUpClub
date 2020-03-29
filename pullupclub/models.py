@@ -17,3 +17,6 @@ class PullUpSession(models.Model):
     
     def __str__(self):
         return ("No. " + str(self.pk))
+
+#class Awards(models.Model):
+#    type
