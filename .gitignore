@@ -1,6 +1,7 @@
 # Don't track content of these folders
 manage.py
 venv_proj_2
+env
 db.sqlite3
 __pycache__
 */__pycache__/
