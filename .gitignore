@@ -12,8 +12,9 @@ __pycache__
 *.exe
 *.o
 *.so
+__pycache__/*.py
+__pycache__/*.pyc
 
-*.so
 
 # Packages #
 ############
