@@ -2,6 +2,7 @@
 manage.py
 venv_proj_2
 db.sqlite3
+__pycache__
 
 # Compiled source #
 ###################
