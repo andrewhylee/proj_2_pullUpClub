@@ -4,6 +4,8 @@ venv_proj_2
 env
 db.sqlite3
 __pycache__
+*/__pycache__/
+*/*/__pycache__/
 
 # Compiled source #
 ###################
