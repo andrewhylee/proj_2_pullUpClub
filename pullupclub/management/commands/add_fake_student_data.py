@@ -40,7 +40,6 @@ class Command(BaseCommand):
             print("created student", student)
 
             # Add pullups sessions over time
-            pullup_sessions = []
             now = timezone.now()
             current_time_pointer = now - timedelta(days=720)
             pullups_per_session = random.randint(0, 10)
