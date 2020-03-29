@@ -41,13 +41,14 @@ class Command(BaseCommand):
 
             # Add pullups sessions over time
             now = timezone.now()
-            current_time_pointer = now - timedelta(days=720)
+            current_time_pointer = now - timedelta(days=360)
             pullups_per_session = random.randint(0, 10)
             while current_time_pointer < now:
 
-                got_stronger = _true_or_false(probability_true=0.15)
-                if got_stronger:
-                    pullups_per_session += 1
+                if pullups_per_session < MAX_PULLUPS_PER_SESSION:
+                    got_stronger = _true_or_false(probability_true=0.15)
+                    if got_stronger:
+                        pullups_per_session += 1
 
                 pus = PullUpSession.objects.create(
                     student=student,
@@ -56,7 +57,7 @@ class Command(BaseCommand):
                 pus.save(update_fields=['time'])
 
                 # Fast forward in time
-                hours_to_advance = random.randint(3, 48)
+                hours_to_advance = random.randint(3, 72)
                 current_time_pointer = current_time_pointer + timedelta(hours=hours_to_advance)
 
 
