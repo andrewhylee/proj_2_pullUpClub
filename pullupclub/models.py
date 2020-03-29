@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -11,6 +12,8 @@ class Student(models.Model):
 
 class PullUpSession(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    amount_of_pullups = models.IntegerField()
+    count = models.PositiveIntegerField(default=0)
+    time = models.DateTimeField(auto_now_add=True)
+    
     def __str__(self):
         return ("No. " + str(self.pk))
