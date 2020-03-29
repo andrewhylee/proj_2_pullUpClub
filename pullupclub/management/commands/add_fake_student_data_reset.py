@@ -9,7 +9,7 @@ from pullupclub.models import Student
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        count = Student.objects.delete()
+        count = Student.objects.all().delete()
         print("students deleted", count)
 
         call_command("add_fake_student_data")
