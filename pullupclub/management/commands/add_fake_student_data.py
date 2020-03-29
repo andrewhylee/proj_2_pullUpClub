@@ -50,9 +50,13 @@ class Command(BaseCommand):
                     if got_stronger:
                         pullups_per_session += 1
 
+                # Add some variance. sometimes we can do more, sometimes less
+                pullups_this_session = pullups_per_session + random.randint(-3, 1)
+                pullups_this_session = max(0, pullups_this_session)
+
                 pus = PullUpSession.objects.create(
                     student=student,
-                    count=pullups_per_session)
+                    count=pullups_this_session)
                 pus.time = current_time_pointer
                 pus.save(update_fields=['time'])
 
