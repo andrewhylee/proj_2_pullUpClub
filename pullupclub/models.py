@@ -18,5 +18,17 @@ class PullUpSession(models.Model):
     def __str__(self):
         return ("No. " + str(self.pk))
 
-#class Awards(models.Model):
-#    type
+class Award(models.Model):
+    TYPE = (
+        ('BD', 'By Distance'),
+        ('BC', 'By Count'),
+    )
+    name = models.CharField(max_length=60)
+    type = models.CharField(max_length=2, choices=TYPE)
+    arm_length_inches = models.PositiveSmallIntegerField(default=0)
+    threshold_to_achieve = models.PositiveSmallIntegerField(default=0)
+    # Doesn't work --> if(type == 'BD'):
+    distance_covered = models.PositiveSmallIntegerField(default=0)
+
+    def __str__(self):
+        return self.name
