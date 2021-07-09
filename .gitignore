@@ -1,11 +1,13 @@
 # Don't track content of these folders
 manage.py
 venv_proj_2
-env
+venv
+.vscode
 db.sqlite3
 __pycache__
 */__pycache__/
 */*/__pycache__/
+
 
 # Compiled source #
 ###################
